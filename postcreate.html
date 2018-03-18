@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">View and Edit Posts</div>
+                        <div class="panel-body">
+                                
+                            <select id="idlist" class="form-control">
+                                <option disabled>Select a post ID to view an update</option>
+                            </select><br>
+                            <button id="view" data-toggle="modal" data-target="#myModal" class="btn  btn-primary">View</button>
+                        </div>
+                    </div>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Create Notes
+                        </div>
+                        <div class="panel-body">
+                                <input type="number" placeholder="Enter a unique ID" class="form-control" name="_id" id="_id"><br>
+                                <input type="text" placeholder="Enter a topic" class="form-control" name="topic" id="topic"><br>
+                                <textarea placeholder="Notes goes here..." rows="6"name="notes" class="form-control" id="notes"></textarea><br>
+                                <button id="submit" class="btn btn-primary pull-right">Create Notes</button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                        <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    Create Notes
+                                </div>
+                                <div class="panel-body">
+                                       <table class="table table-bordered table-hover" id="tbl">
+                                           <thead>
+                                              <tr>
+                                                    <th>Post ID</th>
+                                                    <th>Topic</th>
+                                                    <th>Notes</th>
+                                              </tr>
+                                           </thead>
+                                           <tbody>
+    
+                                           </tbody>
+                                       </table>
+                                </div>
+                            </div>
+                 </div>
+            </div>
+        </div>
+
+
+
+        <div id="myModal" class="modal fade">
+                <div class="modal-dialog">
+              
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <!-- <h4 class="modal-title">Update Requirement</h4> -->
+                    </div>
+                    <div class="modal-body">
+                            <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        Update Post
+                                    </div>
+                                    <div class="panel-body">
+                                            <input type="number" readonly placeholder="Enter a unique ID" class="form-control" name="_id" id="id"><br>
+                                            <input type="text" placeholder="Enter a topic" class="form-control" name="topic" id="tpc"><br>
+                                            <textarea placeholder="Notes goes here..." rows="6"name="notes" class="form-control" id="note"></textarea><br>
+                                            <button id="update" class="btn btn-primary pull-right">Update Notes</button>
+                                        
+                                    </div>
+                                </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+              
+                </div>
+              </div>
+    </body>
+</html>
